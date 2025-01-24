@@ -3,17 +3,22 @@
 [ext_resource type="Texture2D" uid="uid://cvpdf2mfq7b1p" path="res://assets/ballonsheet.png" id="1_lnlmj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ikpyg"]
-size = Vector2(5, 5)
+size = Vector2(6, 6)
 
 [node name="MagicBubble" type="Node2D"]
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(-1, 0)
+freeze = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-position = Vector2(-0.5, 0.5)
-shape = SubResource("RectangleShape2D_ikpyg")
+[node name="Area2D" type="Area2D" parent="RigidBody2D"]
+visible = false
+position = Vector2(1, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
 texture = ExtResource("1_lnlmj")
 region_enabled = true
 region_rect = Rect2(24.8091, 6.82345, 5.44222, 5.26196)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("RectangleShape2D_ikpyg")
