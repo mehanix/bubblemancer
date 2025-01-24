@@ -10,6 +10,7 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+		animated_sprite_2d.play("JumpFall")
 		
 		
 
@@ -30,9 +31,7 @@ func _physics_process(delta: float) -> void:
 			animated_sprite_2d.play("Idle")
 		else:
 			animated_sprite_2d.play("Run")
-	else: 
-		if velocity.y > 0: 
-			animated_sprite_2d.play("Fall")
+
 			
 	#Movment
 	if direction:
