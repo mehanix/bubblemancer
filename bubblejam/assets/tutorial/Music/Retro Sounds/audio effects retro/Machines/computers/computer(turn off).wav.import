@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c6rkiljrt5y8f"
+path="res://.godot/imported/computer(turn off).wav-19635198c4ba9b60d45390cb3945ce5c.sample"
+
+[deps]
+
+source_file="res://assets/tutorial/Music/Retro Sounds/audio effects retro/Machines/computers/computer(turn off).wav"
+dest_files=["res://.godot/imported/computer(turn off).wav-19635198c4ba9b60d45390cb3945ce5c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

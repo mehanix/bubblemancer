@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://yde55eq5y88x"
+path="res://.godot/imported/angry animal.wav-4817e35e85f78ceab97ce4e2855b18e6.sample"
+
+[deps]
+
+source_file="res://assets/tutorial/Music/Retro Sounds/audio effects retro/Animal and caracters/animal/angry animal.wav"
+dest_files=["res://.godot/imported/angry animal.wav-4817e35e85f78ceab97ce4e2855b18e6.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
