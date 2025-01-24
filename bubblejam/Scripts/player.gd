@@ -1,70 +1,48 @@
-### Player.gd
-
 extends CharacterBody2D
 
-#player movement variables
-@export var speed = 100
-@export var gravity = 200
-@export var jump_height = -100
 
-#movement states
-var is_attacking = false
+const SPEED = 150.0
+const JUMP_VELOCITY = -200.0
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
-#movement and physics
-func _physics_process(delta):
-	# vertical movement velocity (down)
-	velocity.y += gravity * delta
-	# horizontal movement processing (left, right)
-	horizontal_movement()
-	
-	#applies movement
-	move_and_slide() 
-	
-	#applies animations
-	if !is_attacking:
-		player_animations()
+
+func _physics_process(delta: float) -> void:
+	# Add the gravity.
+	if not is_on_floor():
+		velocity += get_gravity() * delta
 		
-#horizontal movement calculation
-func horizontal_movement():
-	# if keys are pressed it will return 1 for ui_right, -1 for ui_left, and 0 for neither
-	var horizontal_input = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
-	# horizontal velocity which moves player left or right based on input
-	velocity.x = horizontal_input * speed
-
-#animations
-func player_animations():
-	#on left (add is_action_just_released so you continue running after jumping)
-	if Input.is_action_pressed("ui_left") || Input.is_action_just_released("ui_jump"):
-		$AnimatedSprite2D.flip_h = true
-		$AnimatedSprite2D.play("run")
-		$CollisionShape2D.position.x = 7
 		
-	#on right (add is_action_just_released so you continue running after jumping)
-	if Input.is_action_pressed("ui_right") || Input.is_action_just_released("ui_jump"):
-		$AnimatedSprite2D.flip_h = false
-		$AnimatedSprite2D.play("run")
-		$CollisionShape2D.position.x = -7
-	
-	#on idle if nothing is being pressed
-	if !Input.is_anything_pressed():
-		$AnimatedSprite2D.play("idle")
-		
-#singular input captures
-func _input(event):
-	#on attack
-	if event.is_action_pressed("ui_attack"):
-		is_attacking = true
-		$AnimatedSprite2D.play("attack")		
 
-	#on jump
-	if event.is_action_pressed("ui_jump") and is_on_floor():
-		velocity.y = jump_height
-		$AnimatedSprite2D.play("jump")
 	
-	#reset gravity
+		
+	# Get the input direction and handle the movement/deceleration.
+	# As good practice, you should replace UI actions with custom gameplay actions.
+	var direction := Input.get_axis("MoveLeft", "MoveRight")
+		
+	#Flip Sprite
+	if direction > 0:
+		animated_sprite_2d.flip_h = false	
+	elif direction <0: 
+			animated_sprite_2d.flip_h = true
+	
+	if is_on_floor():
+		if direction == 0: 
+			animated_sprite_2d.play("Idle")
+		else:
+			animated_sprite_2d.play("Run")
+	else: 
+		if velocity.y > 0: 
+			animated_sprite_2d.play("Fall")
+			
+	#Movment
+	if direction:
+		velocity.x = direction * SPEED
 	else:
-		gravity = 200
+		velocity.x = move_toward(velocity.x, 0, SPEED)
 		
-#reset our animation variables
-func _on_animated_sprite_2d_animation_finished():
-	is_attacking = false
+		# Handle jump.
+	if Input.is_action_just_pressed("Jump") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+		animated_sprite_2d.play("JumpStart")
+
+	move_and_slide()
