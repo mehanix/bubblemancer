@@ -4,8 +4,13 @@ extends CharacterBody2D
 @export var SPEED : int = 150.0
 @export var JUMP_FORCE : int = 200.0
 @export var Gravity : int = 900
+#CoyoteTime
+@export var Coyote_Time: float = 0.1
+
 var Jump_Available: bool = false
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var coyote_timer: Timer = $CoyoteTimer
+
 
 
 
@@ -35,11 +40,19 @@ func _physics_process(delta):
 	#Gravity
 	
 	if not is_on_floor():
-		velocity.y += Gravity*delta
-		if velocity.y > 0 :
-			animated_sprite_2d.play ("JumpFall")
+		
+		if Jump_Available:
+			if coyote_timer.is_stopped():
+				coyote_timer.start(Coyote_Time)
+			
+		else:
+			if velocity.y > 0 :
+				animated_sprite_2d.play ("JumpFall")
+		
+			velocity.y += Gravity*delta
 	else: 
 		Jump_Available = true
+		coyote_timer.stop()
 
 	#Jump
 	
@@ -48,5 +61,10 @@ func _physics_process(delta):
 		Jump_Available = false
 		animated_sprite_2d.play("JumpStart")
 		
+		
+		
+		
 	move_and_slide()
 	
+func Coyote_Timeout():
+	Jump_Available = false
