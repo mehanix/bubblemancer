@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://nxt1x3jd33md"]
 
 [ext_resource type="Script" path="res://Scripts/enemies/Bat_Mover_Ai.gd" id="1_f6cdh"]
-[ext_resource type="Texture2D" path="res://assets/Enemies/Bat/Fly/Bat_Fly_0.png" id="1_j3wae"]
-[ext_resource type="Texture2D" path="res://assets/Enemies/Bat/Fly/Bat_Fly_1.png" id="2_d37r7"]
-[ext_resource type="Texture2D" path="res://assets/Enemies/Bat/Fly/Bat_Fly_2.png" id="3_11a5g"]
-[ext_resource type="Texture2D" path="res://assets/Enemies/Bat/Fly/Bat_Fly_3.png" id="4_3ir7e"]
+[ext_resource type="Texture2D" uid="uid://cqap0bjpo1724" path="res://assets/Enemies/BatPruple/Fly/Bat_Fly_0.png" id="1_j3wae"]
+[ext_resource type="Texture2D" uid="uid://7pk33kh0dy8q" path="res://assets/Enemies/BatPruple/Fly/Bat_Fly_1.png" id="2_d37r7"]
+[ext_resource type="Texture2D" uid="uid://n4n2hut3wijh" path="res://assets/Enemies/BatPruple/Fly/Bat_Fly_2.png" id="3_11a5g"]
+[ext_resource type="Texture2D" uid="uid://ttnpa7hmsoe0" path="res://assets/Enemies/BatPruple/Fly/Bat_Fly_3.png" id="4_3ir7e"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bdvjf"]
 animations = [{

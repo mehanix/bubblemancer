@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=4 uid="uid://bpb0rduu14du2"]
+[gd_scene load_steps=7 format=4 uid="uid://bpb0rduu14du2"]
 
 [ext_resource type="Script" path="res://Scripts/BubbleSpawner.gd" id="1_hsobc"]
 [ext_resource type="PackedScene" uid="uid://cbxgienukfalo" path="res://Scenes/Player2.tscn" id="1_pwo17"]
 [ext_resource type="PackedScene" uid="uid://nqutqxgvc85n" path="res://Scenes/TileMap.tscn" id="3_n6bp8"]
 [ext_resource type="Script" path="res://Scripts/chunker.gd" id="4_4amxq"]
 [ext_resource type="PackedScene" uid="uid://cqkrct5yyqtly" path="res://Scenes/enemies/BatShooter.tscn" id="5_xv23y"]
+[ext_resource type="PackedScene" uid="uid://brxphbbr2ts4g" path="res://Scenes/enemies/cannon.tscn" id="6_ihg5u"]
 
 [node name="Joc1" type="Node2D"]
 script = ExtResource("1_hsobc")
@@ -24,5 +25,8 @@ script = ExtResource("4_4amxq")
 
 [node name="CharacterBody2D2" parent="." instance=ExtResource("5_xv23y")]
 position = Vector2(220, 361)
+
+[node name="cannon" parent="." instance=ExtResource("6_ihg5u")]
+position = Vector2(182, 375)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
