@@ -1,0 +1,84 @@
+[gd_scene load_steps=16 format=3 uid="uid://cqkrct5yyqtly"]
+
+[ext_resource type="Script" path="res://Scripts/enemies/Bat_Shooter_Ai.gd" id="1_j0d3c"]
+[ext_resource type="Texture2D" uid="uid://6uq7rgcxhked" path="res://assets/Enemies/BatOrange/Fly/Orange_Bat_Fly_0.png" id="2_drwv3"]
+[ext_resource type="Texture2D" uid="uid://cwc4j4bau78e7" path="res://assets/Enemies/BatGreen/Fly/Green_Bat_Fly_0.png" id="2_ymbt5"]
+[ext_resource type="Texture2D" uid="uid://ca4lxq7kp8ax7" path="res://assets/Enemies/BatOrange/Fly/Orange_Bat_Fly_1.png" id="3_gm2hw"]
+[ext_resource type="Texture2D" uid="uid://c6ffb6mwk5373" path="res://assets/Enemies/BatGreen/Fly/Green_Bat_Fly_1.png" id="3_l5d74"]
+[ext_resource type="Texture2D" uid="uid://cgx74we6pe72h" path="res://assets/Enemies/BatOrange/Fly/Orange_Bat_Fly_2.png" id="4_i4um7"]
+[ext_resource type="Texture2D" uid="uid://n4n2hut3wijh" path="res://assets/Enemies/BatPruple/Fly/Bat_Fly_2.png" id="4_or2ao"]
+[ext_resource type="Texture2D" uid="uid://cjiefi7g121j0" path="res://assets/Enemies/BatGreen/Fly/Green_Bat_Fly_2.png" id="4_pd1sw"]
+[ext_resource type="Texture2D" uid="uid://w5pys6ehliqu" path="res://assets/Enemies/BatGreen/Fly/Green_Bat_Fly_3.png" id="5_66iq4"]
+[ext_resource type="Texture2D" uid="uid://c07d6u0qe7whs" path="res://assets/Enemies/BatOrange/Fly/Orange_Bat_Fly_3.png" id="5_p3k02"]
+[ext_resource type="Texture2D" uid="uid://7pk33kh0dy8q" path="res://assets/Enemies/BatPruple/Fly/Bat_Fly_1.png" id="7_3wj84"]
+[ext_resource type="Texture2D" uid="uid://cqap0bjpo1724" path="res://assets/Enemies/BatPruple/Fly/Bat_Fly_0.png" id="10_fo5yh"]
+[ext_resource type="Texture2D" uid="uid://ttnpa7hmsoe0" path="res://assets/Enemies/BatPruple/Fly/Bat_Fly_3.png" id="13_wq21s"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bdvjf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ymbt5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gm2hw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_or2ao")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_66iq4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_drwv3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_3wj84")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pd1sw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_p3k02")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_fo5yh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_l5d74")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_i4um7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_wq21s")
+}],
+"loop": true,
+"name": &"Fly",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oyeak"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+z_index = 1
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_j0d3c")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -25)
+sprite_frames = SubResource("SpriteFrames_bdvjf")
+animation = &"Fly"
+autoplay = "Fly"
+frame_progress = 0.146074
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -22)
+shape = SubResource("CircleShape2D_oyeak")
+
+[node name="Node" type="Node" parent="."]
