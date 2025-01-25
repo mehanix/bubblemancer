@@ -10,6 +10,9 @@ radius = 72.0625
 radius = 8.0
 height = 26.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uhkng"]
+size = Vector2(16, 28)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_sfvbj"]
 atlas = ExtResource("2_cbmg6")
 region = Rect2(7, 128, 16, 32)
@@ -201,6 +204,10 @@ animations = [{
 
 [node name="Area2D" type="Area2D"]
 
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_05rkr")
+JUMP_FORCE = 250
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -12)
 shape = SubResource("CircleShape2D_fxy3n")
@@ -210,16 +217,19 @@ script = ExtResource("1_05rkr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(0, -14)
-shape = SubResource("CapsuleShape2D_2x52f")
+shape = SubResource("RectangleShape2D_uhkng")
 one_way_collision_margin = 0.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_jy07k")
-animation = &"JumpFall"
+animation = &"Idle"
 autoplay = "Idle"
-frame_progress = 0.791649
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 rotation = -1.54749
 zoom = Vector2(2, 2)
+
+[node name="CoyoteTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="CoyoteTimer" to="." method="Coyote_Timeout"]
