@@ -12,7 +12,8 @@ var Jump_Available: bool = false
 @onready var coyote_timer: Timer = $CoyoteTimer
 
 
-
+func _ready():
+	Global.playerBody = self
 
 
 func _physics_process(delta):
