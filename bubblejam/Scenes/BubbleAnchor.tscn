@@ -3,4 +3,5 @@
 [ext_resource type="Script" path="res://Scripts/BubbleAnchor.gd" id="1_tgbam"]
 
 [node name="RigidBody2D" type="RigidBody2D"]
+gravity_scale = 0.005
 script = ExtResource("1_tgbam")

@@ -1,7 +1,10 @@
-[gd_scene load_steps=32 format=3 uid="uid://bhru400enqxij"]
+[gd_scene load_steps=29 format=3 uid="uid://bhru400enqxij"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_05rkr"]
 [ext_resource type="Texture2D" uid="uid://cnxn0nef7aecl" path="res://assets/AnimationSheet_Character.png" id="2_cbmg6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fxy3n"]
+radius = 72.0625
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2x52f"]
 radius = 8.0
@@ -196,21 +199,27 @@ animations = [{
 "speed": 14.0
 }]
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
-script = ExtResource("1_05rkr")
+[node name="Area2D" type="Area2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -12)
+shape = SubResource("CircleShape2D_fxy3n")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_05rkr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(0, -14)
 shape = SubResource("CapsuleShape2D_2x52f")
 one_way_collision_margin = 0.0
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_jy07k")
 animation = &"JumpFall"
 autoplay = "Idle"
 frame_progress = 0.791649
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 rotation = -1.54749
 zoom = Vector2(2, 2)
