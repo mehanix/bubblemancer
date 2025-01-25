@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://cmr11127u4yvc"]
+
+[node name="BubbleSpawner" type="Node2D"]
