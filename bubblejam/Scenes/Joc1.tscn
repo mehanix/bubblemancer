@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=4 uid="uid://bpb0rduu14du2"]
+[gd_scene load_steps=5 format=4 uid="uid://bpb0rduu14du2"]
 
 [ext_resource type="Script" path="res://Scripts/BubbleSpawner.gd" id="1_hsobc"]
 [ext_resource type="PackedScene" uid="uid://cbxgienukfalo" path="res://Scenes/Player2.tscn" id="1_pwo17"]
 [ext_resource type="PackedScene" uid="uid://nqutqxgvc85n" path="res://Scenes/TileMap.tscn" id="3_n6bp8"]
+[ext_resource type="Script" path="res://Scripts/chunker.gd" id="4_4amxq"]
 
 [node name="Joc1" type="Node2D"]
 script = ExtResource("1_hsobc")
@@ -17,10 +18,7 @@ tile_map_data = PackedByteArray("AAAqAAQAAAACAAIAAAAqAAMAAAAFAAIAAAAqAAIAAAAFAAI
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
-[node name="ReservoirLabel" type="Label" parent="."]
-offset_left = -30.0
-offset_top = 279.0
-offset_right = 10.0
-offset_bottom = 302.0
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("4_4amxq")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
