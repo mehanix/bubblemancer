@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=4 uid="uid://bpb0rduu14du2"]
+[gd_scene load_steps=6 format=4 uid="uid://bpb0rduu14du2"]
 
 [ext_resource type="PackedScene" uid="uid://bhru400enqxij" path="res://Scenes/Player.tscn" id="1_pwo17"]
 [ext_resource type="Script" path="res://Scripts/BubbleSpawner.gd" id="1_yxulk"]
 [ext_resource type="Texture2D" uid="uid://1bdvd6pt2ktd" path="res://assets/tutorial/Kings and Pigs/Sprites/14-TileSets/Terrain (32x32).png" id="2_v5wgq"]
-[ext_resource type="PackedScene" uid="uid://bs86rlsejhc3x" path="res://Scenes/BubbleAnchor.tscn" id="4_kc07k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jgmqr"]
 texture = ExtResource("2_v5wgq")
@@ -615,6 +614,3 @@ tile_set = SubResource("TileSet_slwv1")
 
 [node name="Player" parent="." instance=ExtResource("1_pwo17")]
 position = Vector2(288, 419)
-
-[node name="BubbleAnchor" parent="." instance=ExtResource("4_kc07k")]
-position = Vector2(401, 349)

@@ -25,7 +25,7 @@ func _process(delta: float) -> void:
 		var newBubble = bubblePart.instantiate()
 		newBubble.add_to_group("instantiated_bubbles")
 		newBubble.position = Vector2(position_x, position_y)
-		bubbleParent.get_child(0).add_child(newBubble)
+		bubbleParent.add_child(newBubble)
 		return
 	if Input.is_action_just_released("click"):
 		Global.GameMode = Global.PlayMode
