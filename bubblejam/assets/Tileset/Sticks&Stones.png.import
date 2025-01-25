@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0kykwfwr713e"
-path="res://.godot/imported/ballonsheet.png-ce845a31d42f3875f6063809fd8f8480.ctex"
+uid="uid://bc2wtejjwnemy"
+path="res://.godot/imported/Sticks&Stones.png-823a130283604197b0b9bb58289e10d8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ballonsheet.png"
-dest_files=["res://.godot/imported/ballonsheet.png-ce845a31d42f3875f6063809fd8f8480.ctex"]
+source_file="res://assets/Tileset/Sticks&Stones.png"
+dest_files=["res://.godot/imported/Sticks&Stones.png-823a130283604197b0b9bb58289e10d8.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0kykwfwr713e"
-path="res://.godot/imported/ballonsheet.png-ce845a31d42f3875f6063809fd8f8480.ctex"
+uid="uid://dg01gi0r6h6at"
+path="res://.godot/imported/Trees.png-fd920f4fe4f81e405b0cd9eaacd81f00.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ballonsheet.png"
-dest_files=["res://.godot/imported/ballonsheet.png-ce845a31d42f3875f6063809fd8f8480.ctex"]
+source_file="res://assets/Tileset/Trees.png"
+dest_files=["res://.godot/imported/Trees.png-fd920f4fe4f81e405b0cd9eaacd81f00.ctex"]
 
 [params]
 

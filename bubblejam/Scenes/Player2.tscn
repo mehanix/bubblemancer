@@ -51,22 +51,6 @@ region = Rect2(39, 0, 16, 32)
 atlas = ExtResource("2_cbmg6")
 region = Rect2(135, 160, 16, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jhy61"]
-atlas = ExtResource("2_cbmg6")
-region = Rect2(167, 160, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7pemr"]
-atlas = ExtResource("2_cbmg6")
-region = Rect2(199, 160, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_15f4g"]
-atlas = ExtResource("2_cbmg6")
-region = Rect2(231, 160, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_prcaq"]
-atlas = ExtResource("2_cbmg6")
-region = Rect2(7, 160, 16, 32)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_vjfg8"]
 atlas = ExtResource("2_cbmg6")
 region = Rect2(7, 160, 16, 32)
@@ -160,22 +144,10 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xs5uf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jhy61")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7pemr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_15f4g")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_prcaq")
 }],
 "loop": true,
 "name": &"JumpFall",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -190,9 +162,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_lke6d")
 }],
-"loop": true,
+"loop": false,
 "name": &"JumpStart",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -237,7 +209,7 @@ position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_jy07k")
 animation = &"JumpFall"
 autoplay = "Idle"
-frame_progress = 0.955787
+frame_progress = 0.791649
 
 [node name="Camera2D" type="Camera2D" parent="."]
 rotation = -1.54749

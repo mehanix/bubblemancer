@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b166b5irjq0mx"]
 
-[ext_resource type="Texture2D" uid="uid://cvpdf2mfq7b1p" path="res://assets/ballonsheet.png" id="1_lnlmj"]
+[ext_resource type="Texture2D" uid="uid://b0kykwfwr713e" path="res://assets/ballonsheet.png" id="1_lnlmj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a1t3r"]
 size = Vector2(5, 5)
