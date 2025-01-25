@@ -10,6 +10,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	$ReservoirLabel.text = str(Global.BubbleReservoir)
 	var mouse = get_global_mouse_position()
 	if Input.is_action_just_pressed("click"):
 		Global.GameMode = Global.DrawMode
@@ -21,6 +22,8 @@ func _process(delta: float) -> void:
 		var position_y = mouse.y - (int(mouse.y) % 8)
 		var obj = get_object_at_mouse_pos(position_x, position_y)
 		if (len(obj) > 0): return
+		if Global.BubbleReservoir == 0: return
+		Global.BubbleReservoir -= 1
 		var newBubble = bubblePart.instantiate()
 		newBubble.add_to_group("instantiated_bubbles")
 		newBubble.position = Vector2(position_x, position_y)
@@ -42,3 +45,10 @@ func get_object_at_mouse_pos(position_x, position_y):
 	var result = space_state.intersect_point(query)
 	print(result)
 	return result
+
+
+func _on_timer_timeout() -> void:
+	if Global.GameMode == Global.DrawMode: return
+	if Global.BubbleReservoir + Global.BUBBLE_RECHARGE_RATE <= Global.BUBBLE_MAX_CAPACITY:
+		Global.BubbleReservoir += Global.BUBBLE_RECHARGE_RATE
+	pass # Replace with function body.
