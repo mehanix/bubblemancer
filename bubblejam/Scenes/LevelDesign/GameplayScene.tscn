@@ -56,7 +56,7 @@ scale = Vector2(1.57216, 1.43936)
 position = Vector2(-96, -60)
 
 [node name="Wand" parent="." instance=ExtResource("7_ttyv3")]
-position = Vector2(-129, -19)
+position = Vector2(-38, -42)
 
 [node name="cannon" parent="." instance=ExtResource("5_kwgii")]
 position = Vector2(246, -293)
