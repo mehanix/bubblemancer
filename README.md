@@ -26,11 +26,15 @@ Download and extract a release for your platform (Windows/Linux).
 
 ## The Team
 
-- Nicoleta Ciausu ([mehanix](https://github.com/mehanix)) - Programming
-- Stefan Radu ([zenbassi](https://github.com/Stefan-Radu)) - Programming
-- Bogdan Vulpescu ([Foxarios](https://www.linkedin.com/in/alexandru-bogdan-vulpescu/)) - Programming/Level Design
-- Ioana Alexandra Mircea ([Reya](mailto:ioanaalexandramircea@yahoo.com)) - Art/Game Design
-- Mihai Bolda ([biotic]()) - Art/Game Design
+🐈 Nicoleta Ciausu ([mehanix](https://github.com/mehanix)) - Programming
+
+✨ Stefan Radu ([zenbassi](https://github.com/Stefan-Radu)) - Programming
+
+🦊 Bogdan Vulpescu ([Foxarios](https://www.linkedin.com/in/alexandru-bogdan-vulpescu/)) - Programming/Level Design
+
+🐈‍⬛ Ioana Alexandra Mircea ([Reya](mailto:ioanaalexandramircea@yahoo.com)) - Art/Game Design
+
+✈️ Mihai Bolda ([biotic](mihai_bolda@yahoo.com)) - Art/Game Design
 
 ## Asset Credits
 
