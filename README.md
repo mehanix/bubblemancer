@@ -25,4 +25,14 @@ Download and extract a release for your platform (Windows/Linux).
 
 ## The Team
 
-## Credits
+- Nicoleta Ciausu (mehanix) - Programming
+- Stefan Radu (zenbassi) - Programming
+- Bogdan Vulpescu (Foxarios) - Programming/Level Design
+- Ioana Alexandra Mircea (Reya) - Art/Game Design
+- Mihai Bolda (biotic) - Art/Game Design
+
+## Asset Credits
+
+All art assets done by Reya/biotic with the exception of:
+- Player Character
+- Bat Character
