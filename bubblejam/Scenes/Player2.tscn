@@ -1,7 +1,8 @@
-[gd_scene load_steps=28 format=3 uid="uid://cbxgienukfalo"]
+[gd_scene load_steps=29 format=3 uid="uid://cbxgienukfalo"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_05rkr"]
 [ext_resource type="Texture2D" uid="uid://cnxn0nef7aecl" path="res://assets/AnimationSheet_Character.png" id="2_cbmg6"]
+[ext_resource type="Script" path="res://Scenes/camera_2d.gd" id="3_xkwcv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uhkng"]
 size = Vector2(16, 28)
@@ -213,8 +214,13 @@ animation = &"Idle"
 autoplay = "Idle"
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -102)
 rotation = -1.54749
 zoom = Vector2(2, 2)
+limit_left = -280
+limit_right = 288
+limit_smoothed = true
+script = ExtResource("3_xkwcv")
 
 [node name="CoyoteTimer" type="Timer" parent="."]
 
