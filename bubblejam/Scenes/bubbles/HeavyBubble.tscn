@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://5choagaqyyiq"]
+
+[ext_resource type="Script" path="res://Scenes/bubbles/heavy_bubble.gd" id="1_83vcd"]
+[ext_resource type="Texture2D" uid="uid://bl68snpi82s6u" path="res://assets/Ballonsheet-bubble_types.png" id="1_sy5uk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lbtdc"]
+radius = 4.0
+
+[node name="HeavyBubble" type="CharacterBody2D"]
+collision_mask = 10
+script = ExtResource("1_83vcd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_sy5uk")
+region_enabled = true
+region_rect = Rect2(14.7901, 11.893, 8.1646, 8.42798)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 2
+shape = SubResource("CircleShape2D_lbtdc")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 15.0
+one_shot = true
+autostart = true

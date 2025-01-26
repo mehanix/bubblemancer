@@ -1,47 +1,68 @@
 extends CharacterBody2D
 
+@export_category("Movement")
+@export var SPEED : int = 100.0
+@export var JUMP_FORCE : int = 200.0
+@export var Gravity : int = 900
+#CoyoteTime
+@export var Coyote_Time: float = 0.05
 
-const SPEED = 150.0
-const JUMP_VELOCITY = -200.0
+var Jump_Available: bool = false
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var coyote_timer: Timer = $CoyoteTimer
 
 
-func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
-		
-		
+func _ready():
+	Global.playerBody = self
 
-	# Handle jump.
-	if Input.is_action_just_pressed("Jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-		animated_sprite_2d.Play("JumpStart")
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("MoveLeft", "MoveRight")
-		
-	#Flip Sprite
-	if direction > 0:
-		animated_sprite_2d.flip_h = false	
-	elif direction <0: 
-			animated_sprite_2d.flip_h = true
+func _physics_process(delta):
+	var direction = Input.get_axis("MoveLeft", "MoveRight")
 	
-	if is_on_floor():
-		if direction == 0: 
-			animated_sprite_2d.play("Idle")
-		else:
-			animated_sprite_2d.play("Run")
-	else: 
-		animated_sprite_2d.play("Jump")
+	#Movement
 	
-		
-	
-	#Movment
-	if direction:
+	if direction: 
 		velocity.x = direction * SPEED
+		if is_on_floor():
+			animated_sprite_2d.play("Run")
+		
+		#Flip Sprite
+		if direction == 1:
+			animated_sprite_2d.flip_h = false
+		elif direction == -1:
+			animated_sprite_2d.flip_h = true
+		
+		
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = 0
+		if is_on_floor():
+			animated_sprite_2d.play("Idle")
+	
+	#Gravity
+	
+	if not is_on_floor():
+		
+		if Jump_Available:
+			if coyote_timer.is_stopped():
+				coyote_timer.start(Coyote_Time)
+			
+		else:
+			if velocity.y > 0 :
+				animated_sprite_2d.play ("JumpFall")
+		
+			velocity.y += Gravity*delta
+	else: 
+		Jump_Available = true
+		coyote_timer.stop()
 
+	#Jump
+	
+	if Input.is_action_just_pressed("Jump") and Jump_Available:
+		velocity.y -= JUMP_FORCE
+		Jump_Available = false
+		animated_sprite_2d.play("JumpStart")	
+		
 	move_and_slide()
+	
+func Coyote_Timeout():
+	Jump_Available = false

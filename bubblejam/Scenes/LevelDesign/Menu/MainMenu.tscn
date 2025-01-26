@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwc1bwe4o4hrh"]
+
+[ext_resource type="PackedScene" uid="uid://dmei0ayf8kgb8" path="res://Scenes/LevelDesign/Menu/Menu_Func.tscn" id="1_grm65"]
+[ext_resource type="PackedScene" uid="uid://0usyekk2luam" path="res://Scenes/LevelDesign/Menu/Menu_Background.tscn" id="2_8k57u"]
+
+[node name="MainMenu" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+
+[node name="Menu2" parent="." instance=ExtResource("2_8k57u")]
+position = Vector2(96, 65)
+
+[node name="Menu" parent="." instance=ExtResource("1_grm65")]
+offset_left = 8.0
+offset_top = 21.0
+offset_right = 8.0
+offset_bottom = 21.0

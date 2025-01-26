@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbvrki51n7dn3"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_t4exu"]
+
+[node name="Chunk" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 1.0
+offset_top = -4.0
+offset_right = 41.0
+offset_bottom = 36.0
+texture = SubResource("CanvasTexture_t4exu")

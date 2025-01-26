@@ -1,7 +1,13 @@
-[gd_scene load_steps=5 format=4 uid="uid://bpb0rduu14du2"]
+<<<<<<< HEAD
+[gd_scene load_steps=6 format=4 uid="uid://bpb0rduu14du2"]
+=======
+[gd_scene load_steps=7 format=4 uid="uid://bpb0rduu14du2"]
+>>>>>>> 929978370580bdc6dd899446cd41641c894b6217
 
-[ext_resource type="PackedScene" uid="uid://cbxgienukfalo" path="res://Scenes/Player.tscn" id="1_pwo17"]
+[ext_resource type="PackedScene" uid="uid://bhru400enqxij" path="res://Scenes/Player.tscn" id="1_pwo17"]
+[ext_resource type="Script" path="res://Scripts/BubbleSpawner.gd" id="1_yxulk"]
 [ext_resource type="Texture2D" uid="uid://1bdvd6pt2ktd" path="res://assets/tutorial/Kings and Pigs/Sprites/14-TileSets/Terrain (32x32).png" id="2_v5wgq"]
+[ext_resource type="PackedScene" uid="uid://bs86rlsejhc3x" path="res://Scenes/BubbleAnchor.tscn" id="4_kc07k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jgmqr"]
 texture = ExtResource("2_v5wgq")
@@ -604,11 +610,15 @@ terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_jgmqr")
 
 [node name="MainScene" type="Node2D"]
+script = ExtResource("1_yxulk")
 
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
+[node name="TerrainLayer" type="TileMapLayer" parent="."]
 position = Vector2(20, 0)
 tile_map_data = PackedByteArray("AAAQABsAAAAcAA4AAAARABsAAAAcAA4AAAASABsAAAAcAA4AAAATABsAAAAcAA4AAAAUABsAAAAcAA4AAAAVABsAAAAcAA4AAAAWABsAAAAcAA4AAAAXABsAAAAcAA4AAAAYABsAAAAcAA4AAAAZABsAAAAcAA4AAAAaABsAAAAcAA4AAAAbABsAAAAcAA4AAAAbABoAAAAcAA4AAAAcABoAAAAcAA4AAAAdABoAAAAcAA4AAAAeABsAAAAcAA4AAAAfABsAAAAcAA4AAAAgABsAAAAcAA4AAAA=")
 tile_set = SubResource("TileSet_slwv1")
 
 [node name="Player" parent="." instance=ExtResource("1_pwo17")]
 position = Vector2(288, 419)
+
+[node name="BubbleAnchor" parent="." instance=ExtResource("4_kc07k")]
+position = Vector2(401, 349)

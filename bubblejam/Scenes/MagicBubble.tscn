@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://b166b5irjq0mx"]
+
+[ext_resource type="Script" path="res://Scenes/magic_bubble.gd" id="1_ub4dq"]
+[ext_resource type="Texture2D" uid="uid://bl68snpi82s6u" path="res://assets/Ballonsheet-bubble_types.png" id="2_pcdtf"]
+[ext_resource type="Script" path="res://Scenes/bubbletimer.gd" id="3_gq5kk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a1t3r"]
+size = Vector2(8, 8)
+
+[node name="RigidBody2D" type="RigidBody2D" groups=["magicbubble"]]
+position = Vector2(-3, 2)
+collision_layer = 3
+gravity_scale = 0.005
+script = ExtResource("1_ub4dq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_a1t3r")
+one_way_collision = true
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+texture = ExtResource("2_pcdtf")
+region_enabled = true
+region_rect = Rect2(1.89091, 0.973325, 8.15273, 8.09998)
+
+[node name="Timer" type="Timer" parent="CollisionShape2D"]
+wait_time = 5.0
+one_shot = true
+autostart = true
+script = ExtResource("3_gq5kk")
+
+[connection signal="timeout" from="CollisionShape2D/Timer" to="CollisionShape2D" method="_on_timer_timeout"]
+[connection signal="timeout" from="CollisionShape2D/Timer" to="CollisionShape2D/Timer" method="_on_timeout"]

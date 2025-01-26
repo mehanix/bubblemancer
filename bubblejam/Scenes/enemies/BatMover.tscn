@@ -1,0 +1,67 @@
+[gd_scene load_steps=9 format=3 uid="uid://nxt1x3jd33md"]
+
+[ext_resource type="Script" path="res://Scripts/enemies/Bat_Mover_Ai.gd" id="1_f6cdh"]
+[ext_resource type="Texture2D" uid="uid://cqap0bjpo1724" path="res://assets/Enemies/BatPruple/Fly/Bat_Fly_0.png" id="1_j3wae"]
+[ext_resource type="Texture2D" uid="uid://7pk33kh0dy8q" path="res://assets/Enemies/BatPruple/Fly/Bat_Fly_1.png" id="2_d37r7"]
+[ext_resource type="Texture2D" uid="uid://n4n2hut3wijh" path="res://assets/Enemies/BatPruple/Fly/Bat_Fly_2.png" id="3_11a5g"]
+[ext_resource type="Texture2D" uid="uid://ttnpa7hmsoe0" path="res://assets/Enemies/BatPruple/Fly/Bat_Fly_3.png" id="4_3ir7e"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bdvjf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_j3wae")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_d37r7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_11a5g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3ir7e")
+}],
+"loop": true,
+"name": &"Fly",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oyeak"]
+radius = 3.16228
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ydiqo"]
+size = Vector2(13, 14)
+
+[node name="CharacterBody2D2" type="CharacterBody2D" groups=["bat"]]
+z_index = 1
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("1_f6cdh")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -25)
+sprite_frames = SubResource("SpriteFrames_bdvjf")
+animation = &"Fly"
+autoplay = "Fly"
+frame_progress = 0.796234
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -22)
+shape = SubResource("CircleShape2D_oyeak")
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(1, -22)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-2.5, 1)
+shape = SubResource("RectangleShape2D_ydiqo")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
