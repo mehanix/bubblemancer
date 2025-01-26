@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://0rw058ei0hci" path="res://Scenes/UI/Resources.tscn" id="5_4nc72"]
 [ext_resource type="PackedScene" uid="uid://brxphbbr2ts4g" path="res://Scenes/enemies/cannon.tscn" id="5_kwgii"]
 [ext_resource type="PackedScene" uid="uid://nxt1x3jd33md" path="res://Scenes/enemies/BatMover.tscn" id="6_c3oo1"]
-[ext_resource type="PackedScene" uid="uid://cavjf5wictngw" path="res://Scenes/wand.tscn" id="7_ttyv3"]
+[ext_resource type="PackedScene" path="res://Scenes/wand.tscn" id="7_ttyv3"]
 [ext_resource type="PackedScene" uid="uid://cbb1nbdv1opmy" path="res://Scenes/enemies/BatSlider.tscn" id="9_fjoqs"]
 
 [node name="MainGame" type="Node2D"]
