@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmei0ayf8kgb8"]
+
+[ext_resource type="Texture2D" uid="uid://x40kv2ybpgo1" path="res://assets/UI/start_button.png" id="1_6cx1o"]
+[ext_resource type="Script" path="res://Scripts/menu_func.gd" id="1_j71vf"]
+[ext_resource type="Texture2D" uid="uid://btqci36b51txx" path="res://assets/UI/exit_button.png" id="2_eepf7"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j71vf")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.5
+offset_top = -39.0
+offset_right = 35.5
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Play" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_6cx1o")
+
+[node name="Quit" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_eepf7")
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

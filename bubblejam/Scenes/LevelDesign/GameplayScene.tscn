@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c8hdwvum22km1"]
+[gd_scene load_steps=4 format=3 uid="uid://c8hdwvum22km1"]
 
 [ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_l540p"]
 [ext_resource type="PackedScene" uid="uid://cbxgienukfalo" path="res://Scenes/Player2.tscn" id="1_wuptr"]
 [ext_resource type="PackedScene" uid="uid://d1kte1rsederf" path="res://Scenes/LevelDesign/Tutorial/Movement_Tutorial.tscn" id="2_egbwk"]
-[ext_resource type="PackedScene" uid="uid://nxt1x3jd33md" path="res://Scenes/enemies/BatMover.tscn" id="4_ncu3s"]
 
 [node name="MainGame" type="Node2D"]
 
@@ -11,9 +10,7 @@
 unique_name_in_owner = true
 script = ExtResource("1_l540p")
 
-[node name="Node2D" parent="." instance=ExtResource("2_egbwk")]
+[node name="Tileset" parent="." instance=ExtResource("2_egbwk")]
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_wuptr")]
-position = Vector2(-242, 0)
-
-[node name="CharacterBody2D2" parent="." instance=ExtResource("4_ncu3s")]
+position = Vector2(-245, -1)
