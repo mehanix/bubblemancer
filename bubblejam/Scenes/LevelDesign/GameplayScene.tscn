@@ -1,10 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://c8hdwvum22km1"]
+[gd_scene load_steps=5 format=3 uid="uid://c8hdwvum22km1"]
 
+[ext_resource type="Script" path="res://Scripts/BubbleSpawner.gd" id="1_2igso"]
 [ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_l540p"]
 [ext_resource type="PackedScene" uid="uid://cbxgienukfalo" path="res://Scenes/Player2.tscn" id="1_wuptr"]
 [ext_resource type="PackedScene" uid="uid://d1kte1rsederf" path="res://Scenes/LevelDesign/Tutorial/Movement_Tutorial.tscn" id="2_egbwk"]
 
 [node name="MainGame" type="Node2D"]
+script = ExtResource("1_2igso")
 
 [node name="GameManger" type="Node" parent="."]
 unique_name_in_owner = true
@@ -14,3 +16,8 @@ script = ExtResource("1_l540p")
 
 [node name="Player" parent="." instance=ExtResource("1_wuptr")]
 position = Vector2(-245, -1)
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
