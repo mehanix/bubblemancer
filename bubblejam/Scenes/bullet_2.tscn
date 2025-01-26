@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://es21eanfvsdm"]
+
+[ext_resource type="Script" path="res://Scripts/enemies/bullet_2.gd" id="1_pj130"]
+[ext_resource type="Texture2D" uid="uid://coyd3q74d376f" path="res://assets/Enemies/cannon/cannon_projectile.png" id="1_w6xtg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_last1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_w6xtg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Bullet_2" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_last1")
+autoplay = "default"
+script = ExtResource("1_pj130")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
