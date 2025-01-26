@@ -18,7 +18,7 @@ script = ExtResource("1_l540p")
 z_index = -1
 
 [node name="Player" parent="." instance=ExtResource("1_wuptr")]
-position = Vector2(-127, -173)
+position = Vector2(-8, -1020)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../Camera2D")
@@ -28,7 +28,7 @@ wait_time = 0.1
 autostart = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-127, -173)
+position = Vector2(-8, -1020)
 offset = Vector2(0, -108)
 zoom = Vector2(2, 2)
 limit_left = -280
