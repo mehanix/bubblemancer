@@ -7,8 +7,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a1t3r"]
 size = Vector2(8, 8)
 
-[node name="RigidBody2D" type="RigidBody2D"]
+[node name="RigidBody2D" type="RigidBody2D" groups=["magicbubble"]]
 position = Vector2(-3, 2)
+collision_layer = 3
 gravity_scale = 0.005
 script = ExtResource("1_ub4dq")
 

@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=3 uid="uid://x4aun0caqrpy"]
+
+[ext_resource type="Texture2D" uid="uid://coyd3q74d376f" path="res://assets/cannon/cannon_projectile.png" id="2_urgnt"]
+
+[sub_resource type="GDScript" id="GDScript_2dc70"]
+script/source = "extends CharacterBody2D
+
+@export var SPEED: int = 150
+
+var spawn_pos: Vector2
+var spawn_rot: float = 0
+var zdex
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	global_position = spawn_pos
+	global_rotation = 0
+	velocity = Vector2(SPEED, 0).rotated(spawn_rot)
+	z_index = zdex
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	move_and_slide()
+	if get_last_slide_collision() != null:
+		#queue_free()
+		pass
+
+
+func _on_timer_timeout() -> void:
+	queue_free() # delete after some time
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ugn43"]
+radius = 4.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bkf8j"]
+radius = 4.12311
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
+script = SubResource("GDScript_2dc70")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_urgnt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ugn43")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 15.0
+one_shot = true
+autostart = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_bkf8j")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

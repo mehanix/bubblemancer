@@ -10,4 +10,3 @@ func add_health():
 
 func remove_Health(Damage):
 	Global.playerHealth -= Damage
-	
