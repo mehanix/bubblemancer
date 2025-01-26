@@ -3,7 +3,7 @@ extends Node2D
 var angle: float = 0
 var player = null
 
-@onready var root_scene = get_tree().get_root().get_node("Joc1")
+@onready var root_scene = get_tree().get_root().get_node("GameplayScene")
 @onready var projectile = load("res://Scenes/bubbles/HeavyBubble.tscn")
 
 # Called when the node enters the scene tree for the first time.

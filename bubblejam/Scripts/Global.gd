@@ -2,6 +2,7 @@ extends Node
 # Global variables and stuff
 const PlayMode = "PLAY"
 const DrawMode = "DRAW"
+const MenuMode = "MENU"
 
 var GameMode = PlayMode
 

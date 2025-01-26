@@ -34,6 +34,7 @@ func handle_aniamtion():
 
 
 func _on_area_2d_body_entered(body):
-	game_manger.remove_Health(1)
+	if body.is_in_group("player"):
+		game_manger.remove_Health(1)
 	
 	pass # Replace with function body.

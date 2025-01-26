@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://0rw058ei0hci"]
+
+[ext_resource type="Script" path="res://Scripts/resources.gd" id="1_3lmep"]
+[ext_resource type="Texture2D" uid="uid://cssx2pdc0t0np" path="res://assets/UI/HP/HP_bar-empty.png" id="1_y1kp4"]
+[ext_resource type="Texture2D" uid="uid://vxvh8w4krbc2" path="res://assets/UI/HP/HP_fill_bar.png" id="2_fpsc4"]
+
+[node name="HealthBar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3lmep")
+
+[node name="HP" type="TextureProgressBar" parent="."]
+texture_filter = 1
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 104.0
+max_value = 3.0
+value = 3.0
+fill_mode = 3
+texture_under = ExtResource("1_y1kp4")
+texture_progress = ExtResource("2_fpsc4")
+
+[connection signal="changed" from="HP" to="." method="_on_hp_changed"]
