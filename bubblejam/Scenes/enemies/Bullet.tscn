@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://x4aun0caqrpy"]
 
-[ext_resource type="Texture2D" uid="uid://coyd3q74d376f" path="res://assets/cannon/cannon_projectile.png" id="2_urgnt"]
+[ext_resource type="Texture2D" uid="uid://coyd3q74d376f" path="res://assets/Enemies/cannon/cannon_projectile.png" id="2_urgnt"]
 
 [sub_resource type="GDScript" id="GDScript_2dc70"]
 script/source = "extends CharacterBody2D
