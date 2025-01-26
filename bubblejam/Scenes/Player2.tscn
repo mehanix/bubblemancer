@@ -1,11 +1,9 @@
-[gd_scene load_steps=32 format=3 uid="uid://cbxgienukfalo"]
+[gd_scene load_steps=30 format=3 uid="uid://cbxgienukfalo"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_05rkr"]
 [ext_resource type="Texture2D" uid="uid://cnxn0nef7aecl" path="res://assets/AnimationSheet_Character.png" id="2_cbmg6"]
-[ext_resource type="Script" path="res://Scenes/camera_2d.gd" id="3_xkwcv"]
 [ext_resource type="Script" path="res://Scenes/gun.gd" id="4_wv8hi"]
 [ext_resource type="PackedScene" uid="uid://br2m5nd0l1v4g" path="res://Scenes/Health.tscn" id="6_4q4kn"]
-[ext_resource type="PackedScene" uid="uid://0rw058ei0hci" path="res://Scenes/UI/Resources.tscn" id="7_dpupv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uhkng"]
 size = Vector2(16, 28)
@@ -215,25 +213,6 @@ position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_jy07k")
 animation = &"Idle"
 autoplay = "Idle"
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, -102)
-zoom = Vector2(2, 2)
-limit_left = -280
-limit_right = 288
-limit_smoothed = true
-script = ExtResource("3_xkwcv")
-
-[node name="HealthBar" parent="Camera2D" instance=ExtResource("7_dpupv")]
-anchors_preset = 4
-anchor_top = 0.5
-anchor_right = 0.0
-anchor_bottom = 0.5
-offset_left = -173.0
-offset_top = -126.0
-offset_right = -173.0
-offset_bottom = -126.0
-grow_horizontal = 1
 
 [node name="CoyoteTimer" type="Timer" parent="."]
 

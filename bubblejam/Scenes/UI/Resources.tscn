@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://0rw058ei0hci"]
+[gd_scene load_steps=7 format=3 uid="uid://0rw058ei0hci"]
 
 [ext_resource type="Script" path="res://Scripts/resources.gd" id="1_3lmep"]
 [ext_resource type="Texture2D" uid="uid://cssx2pdc0t0np" path="res://assets/UI/HP/HP_bar-empty.png" id="1_y1kp4"]
@@ -6,11 +6,17 @@
 [ext_resource type="Texture2D" uid="uid://ns68aoj7bujx" path="res://assets/UI/HP/Ballon_bar_-_structure.png" id="4_d110n"]
 [ext_resource type="Texture2D" uid="uid://cy4a3irp3ewwi" path="res://assets/UI/HP/Ballon_bar_-_full_bar.png" id="5_566yx"]
 
+[sub_resource type="CanvasTexture" id="CanvasTexture_r8ypq"]
+
 [node name="HealthBar" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 1.0
+offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3lmep")
@@ -18,8 +24,10 @@ script = ExtResource("1_3lmep")
 [node name="HP" type="TextureProgressBar" parent="."]
 texture_filter = 1
 layout_mode = 1
-offset_right = 40.0
-offset_bottom = 104.0
+offset_left = 2.0
+offset_top = -1.0
+offset_right = 42.0
+offset_bottom = 103.0
 scale = Vector2(0.7, 0.7)
 max_value = 3.0
 value = 3.0
@@ -27,17 +35,31 @@ fill_mode = 3
 texture_under = ExtResource("1_y1kp4")
 texture_progress = ExtResource("2_fpsc4")
 
+[node name="Backing" type="Sprite2D" parent="HP"]
+modulate = Color(1, 1, 1, 0.423529)
+z_index = -1
+position = Vector2(20, 55.7143)
+scale = Vector2(22.8571, 62.8571)
+texture = SubResource("CanvasTexture_r8ypq")
+
 [node name="BubbleBar" type="TextureProgressBar" parent="."]
 texture_filter = 1
 layout_mode = 1
-offset_left = 200.0
-offset_right = 240.0
+offset_left = 29.0
+offset_right = 69.0
 offset_bottom = 104.0
 scale = Vector2(0.7, 0.7)
 max_value = 15.0
 fill_mode = 3
 texture_under = ExtResource("4_d110n")
 texture_progress = ExtResource("5_566yx")
+
+[node name="Backing2" type="Sprite2D" parent="BubbleBar"]
+modulate = Color(1, 1, 1, 0.486275)
+z_index = -1
+position = Vector2(20, 54.2857)
+scale = Vector2(20, 62.8571)
+texture = SubResource("CanvasTexture_r8ypq")
 
 [connection signal="changed" from="HP" to="." method="_on_hp_changed"]
 [connection signal="changed" from="BubbleBar" to="." method="_on_bubble_bar_changed"]
