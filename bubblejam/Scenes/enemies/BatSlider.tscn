@@ -1,25 +1,25 @@
-[gd_scene load_steps=9 format=3 uid="uid://nxt1x3jd33md"]
+[gd_scene load_steps=9 format=3 uid="uid://cbb1nbdv1opmy"]
 
-[ext_resource type="Script" path="res://Scripts/enemies/Bat_Mover_Ai.gd" id="1_f6cdh"]
-[ext_resource type="Texture2D" uid="uid://cqap0bjpo1724" path="res://assets/Enemies/BatPruple/Fly/Bat_Fly_0.png" id="1_j3wae"]
-[ext_resource type="Texture2D" uid="uid://7pk33kh0dy8q" path="res://assets/Enemies/BatPruple/Fly/Bat_Fly_1.png" id="2_d37r7"]
-[ext_resource type="Texture2D" uid="uid://n4n2hut3wijh" path="res://assets/Enemies/BatPruple/Fly/Bat_Fly_2.png" id="3_11a5g"]
-[ext_resource type="Texture2D" uid="uid://ttnpa7hmsoe0" path="res://assets/Enemies/BatPruple/Fly/Bat_Fly_3.png" id="4_3ir7e"]
+[ext_resource type="Script" path="res://Scenes/enemies/bat_slider.gd" id="1_7ucfj"]
+[ext_resource type="Texture2D" uid="uid://cqap0bjpo1724" path="res://assets/Enemies/BatPruple/Fly/Bat_Fly_0.png" id="2_v3l2d"]
+[ext_resource type="Texture2D" uid="uid://7pk33kh0dy8q" path="res://assets/Enemies/BatPruple/Fly/Bat_Fly_1.png" id="3_xkbn1"]
+[ext_resource type="Texture2D" uid="uid://n4n2hut3wijh" path="res://assets/Enemies/BatPruple/Fly/Bat_Fly_2.png" id="4_iaoyt"]
+[ext_resource type="Texture2D" uid="uid://ttnpa7hmsoe0" path="res://assets/Enemies/BatPruple/Fly/Bat_Fly_3.png" id="5_66gfi"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bdvjf"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_j3wae")
+"texture": ExtResource("2_v3l2d")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_d37r7")
+"texture": ExtResource("3_xkbn1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_11a5g")
+"texture": ExtResource("4_iaoyt")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_3ir7e")
+"texture": ExtResource("5_66gfi")
 }],
 "loop": true,
 "name": &"Fly",
@@ -36,7 +36,7 @@ size = Vector2(13, 14)
 z_index = 1
 collision_layer = 8
 collision_mask = 0
-script = ExtResource("1_f6cdh")
+script = ExtResource("1_7ucfj")
 
 [node name="Node2D" type="Node2D" parent="."]
 
@@ -57,7 +57,6 @@ shape = SubResource("CircleShape2D_oyeak")
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(1, -22)
-collision_layer = 3
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]

@@ -3,6 +3,8 @@ extends Node2D
 var angle: float = 0
 var player = null
 
+const SHOOT_COST = 3
+
 @onready var root_scene = get_parent().get_parent()
 @onready var projectile = load("res://Scenes/bubbles/HeavyBubble.tscn")
 
@@ -18,8 +20,9 @@ func look_at_player() -> void:
 func _process(delta: float) -> void:
 	look_at_player()
 	if Input.is_action_just_pressed("Shoot Heavy"):
-		shoot()
-		
+		if Global.BubbleReservoir >= SHOOT_COST:
+			Global.BubbleReservoir -= SHOOT_COST
+			shoot()
 
 func shoot() -> void:
 	var player_pos = get_global_mouse_position()

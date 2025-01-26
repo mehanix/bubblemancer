@@ -12,12 +12,9 @@ const OFFSET_Y = -70
 
 @onready var bat_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
-
-
-
 func _process(delta):
 	move(delta)
-	handle_aniamtion()
+	handle_animation()
 	
 func move(delta):
 	player = Global.playerBody
@@ -30,8 +27,7 @@ func move(delta):
 	offset_x += offset_x_delta * delta
 
 
-func handle_aniamtion():
-	
+func handle_animation():
 	if direction.x == -1: 
 		bat_sprite.flip_h = false
 	elif direction.x == 1 : 

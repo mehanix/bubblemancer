@@ -1,17 +1,15 @@
 extends CharacterBody2D
 
 
-@export var Speed = 20
-var direction :  Vector2
+@export var speed = 30
+var direction: int = 1
 var player:CharacterBody2D
 
+const LIMIT_LEFT = -250
+const LIMIT_RIGHT = 250
+
 @onready var game_manger: Node = %GameManger
-
-
 @onready var bat_sprite: AnimatedSprite2D = $AnimatedSprite2D
-
-
-
 
 func _process(delta):
 	move(delta)
@@ -19,21 +17,17 @@ func _process(delta):
 	
 func move(delta):
 	player = Global.playerBody
-	velocity = position.direction_to(player.position) * Speed
-	direction.x = (abs(velocity.x) / velocity.x)
+	if global_position.x < LIMIT_LEFT or global_position.x > LIMIT_RIGHT:
+		direction *= -1	
+	velocity = direction * Vector2(speed, 0)
 	move_and_slide()
-	
-
 
 func handle_aniamtion():
-	
-	if direction.x == -1: 
+	if direction == -1: 
 		bat_sprite.flip_h = false
-	elif direction.x == 1 : 
+	elif direction == 1 : 
 		bat_sprite.flip_h = true
-
 
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("player"):
-		print("hit   playerrrrr")
-		game_manger.remove_Health(1)
+		Global.playerHealth -= 1
