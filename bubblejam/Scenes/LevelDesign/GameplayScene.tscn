@@ -1,14 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://c8hdwvum22km1"]
+[gd_scene load_steps=7 format=3 uid="uid://c8hdwvum22km1"]
 
 [ext_resource type="Script" path="res://Scripts/BubbleSpawner.gd" id="1_2igso"]
 [ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_l540p"]
 [ext_resource type="PackedScene" uid="uid://cbxgienukfalo" path="res://Scenes/Player2.tscn" id="1_wuptr"]
 [ext_resource type="PackedScene" uid="uid://d1kte1rsederf" path="res://Scenes/LevelDesign/Tutorial/Movement_Tutorial.tscn" id="2_egbwk"]
 [ext_resource type="PackedScene" uid="uid://0rw058ei0hci" path="res://Scenes/UI/Resources.tscn" id="5_4nc72"]
-[ext_resource type="PackedScene" uid="uid://brxphbbr2ts4g" path="res://Scenes/enemies/cannon.tscn" id="5_kwgii"]
-[ext_resource type="PackedScene" uid="uid://nxt1x3jd33md" path="res://Scenes/enemies/BatMover.tscn" id="6_c3oo1"]
 [ext_resource type="PackedScene" uid="uid://cavjf5wictngw" path="res://Scenes/wand.tscn" id="7_ttyv3"]
-[ext_resource type="PackedScene" uid="uid://dmo1ys7hm3b54" path="res://Scenes/fantana.tscn" id="9_8ifnk"]
 
 [node name="MainGame" type="Node2D"]
 script = ExtResource("1_2igso")
@@ -52,17 +49,7 @@ offset_bottom = -309.0
 grow_horizontal = 1
 scale = Vector2(1.57216, 1.43936)
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("6_c3oo1")]
-position = Vector2(-96, -60)
-
 [node name="Wand" parent="." instance=ExtResource("7_ttyv3")]
 position = Vector2(-38, -42)
-
-[node name="cannon" parent="." instance=ExtResource("5_kwgii")]
-position = Vector2(246, -293)
-rotation = 3.14159
-
-[node name="Fantana" parent="." instance=ExtResource("9_8ifnk")]
-position = Vector2(205, -119)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
