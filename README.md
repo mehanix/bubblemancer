@@ -39,5 +39,5 @@ Download and extract a release for your platform (Windows/Linux).
 ## Asset Credits
 
 All art assets done by Reya/biotic with the exception of:
-- Player Character
+- Player Character - [Penzilla Design](https://penzilla.itch.io/hooded-protagonist)
 - Bat Character
