@@ -2,6 +2,7 @@ extends Node
 # Global variables and stuff
 const PlayMode = "PLAY"
 const DrawMode = "DRAW"
+
 var GameMode = PlayMode
 
 const BUBBLE_MAX_CAPACITY = 30

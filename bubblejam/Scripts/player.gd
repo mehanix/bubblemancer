@@ -60,10 +60,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("Jump") and Jump_Available:
 		velocity.y -= JUMP_FORCE
 		Jump_Available = false
-		animated_sprite_2d.play("JumpStart")
-		
-		
-		
+		animated_sprite_2d.play("JumpStart")	
 		
 	move_and_slide()
 	
