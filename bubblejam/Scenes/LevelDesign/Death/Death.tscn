@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvmactnxtvwyr"]
+
+[ext_resource type="Script" path="res://Scenes/LevelDesign/Death/death_screen.gd" id="1_myr25"]
+[ext_resource type="Texture2D" uid="uid://dw00l0bvp5jtf" path="res://assets/UI/death_screen.png" id="1_rfkdd"]
+[ext_resource type="PackedScene" uid="uid://c2wjutrl7wusq" path="res://Scenes/LevelDesign/Death/Death_Background.tscn" id="2_ixvio"]
+
+[node name="Death" type="Node2D"]
+script = ExtResource("1_myr25")
+
+[node name="Node2D" parent="." instance=ExtResource("2_ixvio")]
+position = Vector2(0, -14)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+
+[node name="DeathScreen" type="Sprite2D" parent="."]
+texture = ExtResource("1_rfkdd")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

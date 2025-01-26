@@ -1,8 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://dmei0ayf8kgb8"]
+[gd_scene load_steps=12 format=3 uid="uid://dmei0ayf8kgb8"]
 
-[ext_resource type="Texture2D" uid="uid://x40kv2ybpgo1" path="res://assets/UI/start_button.png" id="1_6cx1o"]
 [ext_resource type="Script" path="res://Scripts/menu_func.gd" id="1_j71vf"]
 [ext_resource type="Texture2D" uid="uid://btqci36b51txx" path="res://assets/UI/exit_button.png" id="2_eepf7"]
+[ext_resource type="Texture2D" uid="uid://bvhyil0glq47r" path="res://assets/UI/UI_Buttons/start.png" id="2_houpr"]
+[ext_resource type="Texture2D" uid="uid://cy30n1v2jkam2" path="res://assets/UI/logo.png" id="2_ntlcy"]
+[ext_resource type="Texture2D" uid="uid://sibgfpp3fi5n" path="res://assets/UI/UI_Buttons/startp.png" id="3_poc2b"]
+[ext_resource type="Texture2D" uid="uid://bq6ysld76nfyw" path="res://assets/UI/UI_Buttons/starth.png" id="4_lsvph"]
+[ext_resource type="Texture2D" uid="uid://cl8ky3pjo7uns" path="res://assets/UI/UI_Buttons/credits.png" id="5_lx8qj"]
+[ext_resource type="Texture2D" uid="uid://42xcehvqtevx" path="res://assets/UI/UI_Buttons/quitp.png" id="6_ijvpp"]
+[ext_resource type="Texture2D" uid="uid://b8uor1euax3gd" path="res://assets/UI/UI_Buttons/creditsp.png" id="6_xx0rw"]
+[ext_resource type="Texture2D" uid="uid://dm3id54urr6bj" path="res://assets/UI/UI_Buttons/creditsh.png" id="7_0mfmx"]
+[ext_resource type="Texture2D" uid="uid://dvt5q8hjccfdh" path="res://assets/UI/UI_Buttons/quith.png" id="7_w4ala"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -20,9 +28,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -35.5
+offset_left = -36.0
 offset_top = -39.0
-offset_right = 35.5
+offset_right = 37.0
 offset_bottom = 39.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -32,14 +40,42 @@ layout_mode = 2
 
 [node name="Play" type="TextureButton" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("1_6cx1o")
+texture_normal = ExtResource("2_houpr")
+texture_pressed = ExtResource("3_poc2b")
+texture_hover = ExtResource("4_lsvph")
 
-[node name="TextureButton" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+[node name="Credits" type="TextureButton" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+texture_normal = ExtResource("5_lx8qj")
+texture_pressed = ExtResource("6_xx0rw")
+texture_hover = ExtResource("7_0mfmx")
 
 [node name="Quit" type="TextureButton" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("2_eepf7")
+texture_pressed = ExtResource("6_ijvpp")
+texture_hover = ExtResource("7_w4ala")
 
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -95.5
+offset_top = -104.0
+offset_right = 95.5
+offset_bottom = -38.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Logo" type="TextureRect" parent="MarginContainer2"]
+layout_mode = 2
+texture = ExtResource("2_ntlcy")
+
+[connection signal="button_up" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_button_up"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="button_up" from="MarginContainer/VBoxContainer/Credits" to="." method="_on_credits_button_up"]
+[connection signal="button_up" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_button_up"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
