@@ -22,6 +22,7 @@ position = Vector2(-246, -2)
 remote_path = NodePath("../../Camera2D")
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
 autostart = true
 
 [node name="Camera2D" type="Camera2D" parent="."]

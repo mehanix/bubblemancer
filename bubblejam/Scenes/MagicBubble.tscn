@@ -22,7 +22,7 @@ region_enabled = true
 region_rect = Rect2(1.89091, 0.973325, 8.15273, 8.09998)
 
 [node name="Timer" type="Timer" parent="CollisionShape2D"]
-wait_time = 10.0
+wait_time = 5.0
 one_shot = true
 autostart = true
 script = ExtResource("3_gq5kk")

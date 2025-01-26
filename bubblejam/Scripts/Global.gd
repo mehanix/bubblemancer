@@ -6,8 +6,8 @@ const MenuMode = "MENU"
 
 var GameMode = PlayMode
 
-const BUBBLE_MAX_CAPACITY = 30
-const BUBBLE_RECHARGE_RATE = 5 # per second
+const BUBBLE_MAX_CAPACITY = 15
+const BUBBLE_RECHARGE_RATE = 1 # per 0.1s
 
 
 var playerBody: CharacterBody2D
