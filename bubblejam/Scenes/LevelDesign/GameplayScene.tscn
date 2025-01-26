@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c8hdwvum22km1"]
+[gd_scene load_steps=10 format=3 uid="uid://c8hdwvum22km1"]
 
 [ext_resource type="Script" path="res://Scripts/BubbleSpawner.gd" id="1_2igso"]
 [ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_l540p"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://brxphbbr2ts4g" path="res://Scenes/enemies/cannon.tscn" id="5_kwgii"]
 [ext_resource type="PackedScene" uid="uid://nxt1x3jd33md" path="res://Scenes/enemies/BatMover.tscn" id="6_c3oo1"]
 [ext_resource type="PackedScene" path="res://Scenes/wand.tscn" id="7_ttyv3"]
+[ext_resource type="PackedScene" uid="uid://cbb1nbdv1opmy" path="res://Scenes/enemies/BatSlider.tscn" id="9_fjoqs"]
 
 [node name="MainGame" type="Node2D"]
 script = ExtResource("1_2igso")
@@ -63,5 +64,8 @@ rotation = 3.14159
 
 [node name="CharacterBody2D2" parent="." instance=ExtResource("6_c3oo1")]
 position = Vector2(67, -292)
+
+[node name="CharacterBody2D3" parent="." instance=ExtResource("9_fjoqs")]
+position = Vector2(-54, -190)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
