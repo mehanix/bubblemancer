@@ -12,5 +12,7 @@ zoom = Vector2(3, 3)
 position = Vector2(96, 65)
 
 [node name="Menu" parent="." instance=ExtResource("1_grm65")]
-offset_top = 19.0
-offset_bottom = 19.0
+offset_left = 8.0
+offset_top = 21.0
+offset_right = 8.0
+offset_bottom = 21.0

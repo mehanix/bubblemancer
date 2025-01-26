@@ -10,5 +10,5 @@ func  _ready():
 func _process(delta):
 	
 	if Global.playerHealth <= 0:
-		get_tree().change_scene_to_file("res://Scenes/LevelDesign/Menu/MainMenu.tscn")
+		get_tree().change_scene_to_file("res://Scenes/LevelDesign/Death/Death.tscn")
 		Global.playerHealth = startHP
