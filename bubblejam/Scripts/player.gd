@@ -1,11 +1,11 @@
 extends CharacterBody2D
 
 @export_category("Movement")
-@export var SPEED : int = 150.0
+@export var SPEED : int = 100.0
 @export var JUMP_FORCE : int = 200.0
 @export var Gravity : int = 900
 #CoyoteTime
-@export var Coyote_Time: float = 0.1
+@export var Coyote_Time: float = 0.05
 
 var Jump_Available: bool = false
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
