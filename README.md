@@ -7,6 +7,7 @@ Tired of being mocked by his fellow magicians for not having “true powers”, 
 
 But can he conquer this tower, filled with many dangers in order to retrieve the powerful tome of magic at its very top, before he is destroyed by the guardians of the ancient power? Will his delicate balloons be enough to help him gain the respect of his peers, or will their assessment of his feeble magic prove right and lead our BubbleMancer to his untimely demise?
 
+(Global Game Jam 2024 game - [link here](https://globalgamejam.org/games/2025/bubblemancer-4-0))
 ## Screenshots
 
 ![image](https://github.com/user-attachments/assets/62ea0ef3-b549-4c0d-9828-cc5ba35728f2)
@@ -25,11 +26,11 @@ Download and extract a release for your platform (Windows/Linux).
 
 ## The Team
 
-- Nicoleta Ciausu (mehanix) - Programming
-- Stefan Radu (zenbassi) - Programming
-- Bogdan Vulpescu (Foxarios) - Programming/Level Design
-- Ioana Alexandra Mircea (Reya) - Art/Game Design
-- Mihai Bolda (biotic) - Art/Game Design
+- Nicoleta Ciausu ([mehanix](https://github.com/mehanix)) - Programming
+- Stefan Radu ([zenbassi](https://github.com/Stefan-Radu)) - Programming
+- Bogdan Vulpescu ([Foxarios](https://www.linkedin.com/in/alexandru-bogdan-vulpescu/)) - Programming/Level Design
+- Ioana Alexandra Mircea ([Reya](mailto:ioanaalexandramircea@yahoo.com)) - Art/Game Design
+- Mihai Bolda ([biotic]()) - Art/Game Design
 
 ## Asset Credits
 
