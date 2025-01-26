@@ -25,6 +25,7 @@ func _process(delta: float) -> void:
 			shoot()
 
 func shoot() -> void:
+	#if Global.GameMode != Global.PlayMode: return
 	var player_pos = get_global_mouse_position()
 	var rot = rotation
 	var instance = projectile.instantiate()
