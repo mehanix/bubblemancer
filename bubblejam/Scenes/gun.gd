@@ -28,7 +28,7 @@ func shoot() -> void:
 	instance.spawn_rot = rot
 	instance.spawn_pos = global_position
 	instance.zdex = z_index - 1
-	root_scene.add_child.call_deferred(instance)
+	root_scene.aedd_child.call_deferred(instance)
 
 func _on_timer_timeout() -> void:
 	shoot()

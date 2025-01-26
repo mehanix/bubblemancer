@@ -3,8 +3,9 @@ extends Node
 const PlayMode = "PLAY"
 const DrawMode = "DRAW"
 const MenuMode = "MENU"
+const TutorialMode = "TUTORIAL"
 
-var GameMode = PlayMode
+var GameMode = TutorialMode
 
 const BUBBLE_MAX_CAPACITY = 15
 const BUBBLE_RECHARGE_RATE = 1 # per 0.1s
