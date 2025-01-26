@@ -38,5 +38,4 @@ func handle_aniamtion():
 
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("player"):
-		print("hit   playerrrrr")
 		game_manger.remove_Health(1)

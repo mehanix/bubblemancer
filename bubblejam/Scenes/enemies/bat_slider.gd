@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-@export var speed = 30
+@export var speed = 60
 var direction: int = 1
 var player:CharacterBody2D
 

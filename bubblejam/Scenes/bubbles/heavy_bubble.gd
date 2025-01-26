@@ -23,7 +23,8 @@ func _process(delta: float) -> void:
 		var obj = collision.get_collider()
 		if obj is Node and obj.is_in_group("bat"):
 			obj.queue_free()
-		queue_free()
+		if obj is Node and not obj.is_in_group("player"):
+			queue_free()
 
 func _on_timer_timeout() -> void:
 	queue_free() # delete after some time

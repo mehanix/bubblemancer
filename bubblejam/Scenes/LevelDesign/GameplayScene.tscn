@@ -1,11 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://c8hdwvum22km1"]
+[gd_scene load_steps=10 format=3 uid="uid://c8hdwvum22km1"]
 
 [ext_resource type="Script" path="res://Scripts/BubbleSpawner.gd" id="1_2igso"]
 [ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_l540p"]
 [ext_resource type="PackedScene" uid="uid://cbxgienukfalo" path="res://Scenes/Player2.tscn" id="1_wuptr"]
 [ext_resource type="PackedScene" uid="uid://d1kte1rsederf" path="res://Scenes/LevelDesign/Tutorial/Movement_Tutorial.tscn" id="2_egbwk"]
 [ext_resource type="PackedScene" uid="uid://0rw058ei0hci" path="res://Scenes/UI/Resources.tscn" id="5_4nc72"]
+[ext_resource type="PackedScene" uid="uid://brxphbbr2ts4g" path="res://Scenes/enemies/cannon.tscn" id="5_kwgii"]
+[ext_resource type="PackedScene" uid="uid://nxt1x3jd33md" path="res://Scenes/enemies/BatMover.tscn" id="6_c3oo1"]
 [ext_resource type="PackedScene" uid="uid://cavjf5wictngw" path="res://Scenes/wand.tscn" id="7_ttyv3"]
+[ext_resource type="PackedScene" uid="uid://cbb1nbdv1opmy" path="res://Scenes/enemies/BatSlider.tscn" id="9_fjoqs"]
 
 [node name="MainGame" type="Node2D"]
 script = ExtResource("1_2igso")
@@ -18,7 +21,7 @@ script = ExtResource("1_l540p")
 z_index = -1
 
 [node name="Player" parent="." instance=ExtResource("1_wuptr")]
-position = Vector2(-127, -173)
+position = Vector2(-246, -2)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../Camera2D")
@@ -28,7 +31,7 @@ wait_time = 0.1
 autostart = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-127, -173)
+position = Vector2(-246, -2)
 offset = Vector2(0, -108)
 zoom = Vector2(2, 2)
 limit_left = -280
@@ -49,9 +52,20 @@ offset_bottom = -309.0
 grow_horizontal = 1
 scale = Vector2(1.57216, 1.43936)
 
-[node name="Wand" parent="." instance=ExtResource("7_ttyv3")]
-position = Vector2(-38, -42)
+[node name="CharacterBody2D" parent="." instance=ExtResource("6_c3oo1")]
+position = Vector2(-96, -60)
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="Wand" parent="." instance=ExtResource("7_ttyv3")]
+position = Vector2(-129, -19)
+
+[node name="cannon" parent="." instance=ExtResource("5_kwgii")]
+position = Vector2(246, -293)
+rotation = 3.14159
+
+[node name="CharacterBody2D2" parent="." instance=ExtResource("6_c3oo1")]
+position = Vector2(67, -292)
+
+[node name="CharacterBody2D3" parent="." instance=ExtResource("9_fjoqs")]
+position = Vector2(-54, -190)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
